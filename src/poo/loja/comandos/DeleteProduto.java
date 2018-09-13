@@ -5,11 +5,11 @@ import poo.loja.modelo.Produto;
 
 import java.util.Scanner;
 
-public class Delete extends Comandos{
+public class DeleteProduto implements Comando {
 
-    public static void DeleteProduto(){
+    public void execute(Scanner scn){
         ProdutoDAO pDAO = new ProdutoDAO();
-        Scanner scn = new Scanner(System.in);
+        scn = new Scanner(System.in);
         System.out.println("Informe o id do produto que deseja remover");
         for(Produto prod : pDAO.listAll())
             System.out.println(prod);

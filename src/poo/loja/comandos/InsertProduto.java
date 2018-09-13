@@ -5,19 +5,18 @@ import poo.loja.modelo.Produto;
 
 import java.util.Scanner;
 
-public class Insert extends Comandos {
+public class InsertProduto implements Comando{
 
-
-    public static void InsertProduto(){
+    public void execute(Scanner scn){
         Produto produto = new Produto();
-        Scanner scn = new Scanner(System.in);
         ProdutoDAO pDAO = new ProdutoDAO();
         System.out.println("Informe o nome do produto");
         produto.setNome(scn.next());
         System.out.println("Informe o preco do produto");
         produto.setValor(scn.nextDouble());
         pDAO.insert(produto);
-        System.out.println("Produto Inserido!");
+        System.out.println("Produto Cadastrado com sucesso!");
     }
+
 
 }
